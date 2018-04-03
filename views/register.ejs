@@ -1,0 +1,76 @@
+<% include partials/header.ejs %>
+<% include partials/navbar.ejs %>
+
+
+<div class = "container" style = "margin-top:80px; margin-bottom:93px; padding-top : 10px; padding-bottom:20px; width: 600px; border:2px solid grey;border-radius:15px;">
+    <form method = "post" action = "/register/user" enctype="multipart/form-data">
+  <div class="form-row" style = " padding-top : 10px;">
+    <div class="col-md-12 mb-3">
+      <label for="validationServer01">Full name</label>
+      <input type="text" name = "name" class="form-control is-valid" id="validationServer01" placeholder="Full name" style = "margin-bottom:5px;" required>
+    </div>
+  </div>
+  <div class="form-row" style = " padding-top : 10px;">
+    <div class="col-md-6 mb-3">
+      <label for="validationServer01">Username</label>
+      <input type="text" name = "username" class="form-control is-valid" id="validationServer01" placeholder="Username" style = "margin-bottom:5px;" required>
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="validationServer01">Password</label>
+      <input type="password" name = "password" class="form-control is-valid" id="validationServer01" placeholder="Password" style = "margin-bottom:5px;" required>
+    </div>
+  </div>
+  <div class="form-row" style = " padding-top : 10px;">
+    <div class="col-md-6 mb-3">
+      <label for="validationServer01">Mobile Number</label>
+      <input type="text" name = "mobile" class="form-control is-valid" id="validationServer01" placeholder="Mobile Number" style = "margin-bottom:5px;" required>
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="validationServer01">Age</label>
+      <input type="text" name = "age" class="form-control is-valid" id="validationServer01" placeholder="Age" style = "margin-bottom:5px;" required>
+    </div>
+  </div>
+
+  <div class = "form-row">
+      <div class = "col-md-12">
+          <div class="custom-file">
+            <label for = "imageUpload">Upload Image</label>
+            <input type="file" name = "myimage"  class="custom-file-input" id="imageUpload" style = "margin-bottom:5px;" required>
+          </div>
+      </div>
+  </div>
+
+  <div class = "form-row">
+      <div class = "col-md-12">
+          <div class="form-group">
+              <label for="trainerSelect">Choose a trainer</label>
+              <select name = "trainer" class="form-control" id="trainerSelect">
+                  <option>Choose a Trainer</option>
+                  <% trainers.forEach(function(trainer){ %>
+                        <option><%= trainer.name %></option>
+                  <% }) %>
+              </select>
+          </div>
+      </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-check col-md-12 mb-3">
+      <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>
+      <label class="form-check-label" for="invalidCheck3">
+        <a href="#" >Agree to terms and conditions</a>
+      </label>
+    </div>
+  </div>
+  <div class = "form-row">
+      <div class="form-check col-md-12 mb-3">
+         <button class="btn btn-primary" type="submit">Submit form</button>
+      </div>
+  </div>
+</form>
+</div>
+
+
+
+
+<% include partials/footer.ejs %>

@@ -1,0 +1,64 @@
+<% include partials/header.ejs %>
+<% include partials/navbar.ejs %>
+
+
+<div class = "container row" style = "margin : 20px;">
+    <!--user-->
+    <div class = "col-lg-5">
+        <div class = "container" style = "padding-top : 10px; padding-bottom:20px;margin:20px auto; width: 600px; border:2px solid grey;border-radius:15px;">
+            <h4>User Login</h4>
+            <form method = "post" action = "/login/user">
+                 <div class="form-row" style = " padding-top : 10px;">
+                    <div class="col-md-12 mb-3">
+                          <label for="validationServer01">Username</label>
+                          <input type="text" name = "username" class="form-control is-valid" id="validationServer01" placeholder="Username" required>
+                    </div>
+                 </div>
+                 <div class="form-row" style = " padding-top : 10px;">
+                    <div class="col-md-12 mb-3">
+                          <label for="validationServer01">Password</label>
+                          <input type="password" name = "password" class="form-control is-valid" id="validationServer01" placeholder="Password" required>
+                    </div>
+                 </div>
+                 <div class = "form-row">
+                    <div class="form-check col-md-12 mb-3">
+                         <button class="btn btn-primary" type="submit" style="margin-top: 8px;">Login</button>
+                    </div>
+                 </div>
+            </form>
+        </div>
+    </div>
+
+    <!--middle-->
+    <div class = "col-lg-2">
+
+    </div>
+
+    <!--trainer-->
+    <div class = "col-lg-5">
+        <div class = "container" style = "padding-top : 10px; padding-bottom:20px;margin:20px auto; width: 600px; border:2px solid grey;border-radius:15px;">
+    <h4>Trainer Login</h4>
+    <form method = "post" action = "/login/trainer">
+                 <div class="form-row" style = " padding-top : 10px;">
+                    <div class="col-md-12 mb-3">
+                          <label for="validationServer01">Username</label>
+                          <input type="text" name = "username" class="form-control is-valid" id="validationServer01" placeholder="Username" required>
+                    </div>
+                 </div>
+                 <div class="form-row" style = " padding-top : 10px;">
+                    <div class="col-md-12 mb-3">
+                          <label for="validationServer01">Password</label>
+                          <input type="password" name = "password" class="form-control is-valid" id="validationServer01" placeholder="Password" required>
+                    </div>
+                 </div>
+                 <div class = "form-row">
+                    <div class="form-check col-md-12 mb-3">
+                         <button class="btn btn-primary" type="submit" style="margin-top: 8px;">Login</button>
+                    </div>
+                 </div>
+            </form>
+</div>
+    </div>
+</div>
+
+<% include partials/footer.ejs %>

@@ -1,0 +1,71 @@
+<% include partials/header.ejs %>
+<% include partials/navbar.ejs %>
+
+<div class = "text-center" style = "background-color: #1abc9c; color: #ffffff; margin-bottom:0px; padding: 110px;">
+  <img src = "<%= currentUser.image %>"  class="img-circle" style= "display : inline ; height : 280px; width : 280px;">
+</div>
+
+<div class = "container" style = "padding-top:60px; padding-bottom:80px;">
+  <h1 class="text-info">Your Trainer...</h1>
+  <div class="media" style = "padding-left : 60px; padding-top : 20px; padding-bottom : 50px;">
+  <div class="media-left">
+    <img src="<%= currentTrainer.image %>" class="media-object img-circle" style=" height : 200px; width:200px">
+  </div>
+  <div class="media-body" style = "padding-top: 30px; padding-left : 40px;">
+    <h2 class = "text-danger"><%= currentTrainer.name %></h2>
+    <h3 class = "text-danger" style = "text-wrap:unrestricted"><%= currentTrainer.experience %></h3>
+  </div>
+</div>
+</div>
+
+
+
+<div class = "container-fluid bg-warning">
+  <table class = "table">
+    <thead>
+      <tr class="well">
+        <td class= "text-center text-info"><h2>Day</h2></td>
+        <td class = "text-center text-info"><h2>Exercises</h2></td>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(let i = 0; i<7; i++){ %>
+        <tr>
+          <td class = "text-center text-warning"><h3><%= currentUser.days[i] %></h3></td>
+          <td>
+            <% for(let j =0; j<currentUser.exercises[i].length;j++){ %>
+                <h4 class="text-center text-warning"><%= currentUser.exercises[i][j] %></h4>
+            <% } %>
+          </td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+
+<div class="container" style="padding-top:50px;padding-bottom:60px;">
+  <h1 style = "color: #db5739">Progress</h1>
+  <div style = "padding-top :5px; padding-left:60px;">
+  <div class="progress" style="margin:20px;height: 40px;">
+  <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar"
+  aria-valuenow="<%= currentUser.progressFlexibility %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= currentUser.progressFlexibility + "%" %>">
+    <p style = "padding: 10px;"><%= currentUser.progressFlexibility + "% Flexibility..." %></p>
+  </div>
+</div>
+<div class="progress" style="margin:20px; height: 40px;">
+  <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar"
+  aria-valuenow="<%= currentUser.progressStrength %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= currentUser.progressStrength + "%" %>">
+    <p style = "padding: 10px;"><%= currentUser.progressStrength + "% Strength..." %></p>
+  </div>
+</div>
+<div class="progress" style="margin:20px; height: 40px;">
+  <div class="progress-bar lg progress-bar-danger progress-bar-striped active" role="progressbar"
+  aria-valuenow="<%= currentUser.progressFitness %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= currentUser.progressFitness + "%" %>;">
+    <p style = "padding: 10px;"><%= currentUser.progressFitness + "% Fitness..." %></p>
+  </div>
+</div>
+</div>
+</div>
+
+
+<% include partials/footer.ejs %>

@@ -1,0 +1,26 @@
+<% include partials/header.ejs %>
+<% include partials/navbar.ejs %>
+
+<div class = "text-center" style = "background-color:#1abc9c ; color: #fffff; padding: 110px;margin-bottom:0px;">
+  <img src = "<%= currentUser.image %>"  class="img-circle" style= "display : inline ; height : 280px; width : 280px;">
+  <h3 style="margin-bottom:0px;"><%= currentUser.experience %></h3>
+</div>
+
+<div class = "container-fluid" style = "margin-top:0px; background-color: #e0ded7; padding-bottom:50px;">
+  <h1 class="text-center" style="padding:30px;">TRAINEES</h1>
+  <div class= "container">
+    <h3>Click the image to set routine</h3>
+    <div class="row text-center" style = " display: flex; flex-wrap : wrap; padding:10px;">
+      <% users.forEach(function(user){ %>
+        <div class = "col-md-3 col-md-6">
+          <div class = "thumbnail">
+            <a href = "<%= "/setRoutine:" + user._id %>"><img src = "<%= user.image %>" style = "height : 350px;" ></a>
+          </div>
+
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</div>
+
+<% include partials/footer.ejs %>

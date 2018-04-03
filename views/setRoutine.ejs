@@ -1,0 +1,72 @@
+<% include partials/header.ejs %>
+<% include partials/navbar.ejs %>
+
+<div style="background-color:#EBF7E3;">
+<div class="container" style="padding-top:30px; padding-bottom:30px;">
+  <div class="row">
+    <div class="col-sm-3">
+      <img src="<%= trainee.image %>" class="img-circle" style="height:170px; width:170px;">
+    </div>
+    <div class="col-sm-8">
+      <h3><span><strong>Name:  </strong></span><%= trainee.name %></h3>
+      <h3><span><strong>Age:  </strong></span><%= trainee.age %></h3>
+      <h3><span><strong>Mobile:  </strong></span><%= trainee.mobile %></h3>
+    </div>
+  </div>
+</div>
+</div>
+
+<div style="padding:20px;padding-left:45px;">
+  <form method="post" action="<%= "/setRoutine:" + trainee._id %>">
+    <% for(let i = 0; i<7 ; i++){ %>
+      <div class="form-row">
+        <label for="day"><h2><%= trainee.days[i] %></h2></label>
+        <div class="row">
+        <div class="col-sm-3"><label class="checkbox-inline"><input type="checkbox" name = "<%= trainee.days[i] %>" id="day" value="Supermans">Supermans</label></div>
+        <div class="col-sm-2"><label class="checkbox-inline"><input type="checkbox" name = "<%= trainee.days[i] %>" id="day" value="Push-up">Push-up</label></div>
+        <div class="col-sm-3"><label class="checkbox-inline"><input type="checkbox" name = "<%= trainee.days[i] %>" id="day" value="Bent Knee Push-up">Bent Knee Push-up</label></div>
+        <div class="col-sm-2"><label class="checkbox-inline"><input type="checkbox" name = "<%= trainee.days[i] %>" id="day" value="Crunches">Crunches</label></div>
+        <div class="col-sm-2"><label class="checkbox-inline"><input type="checkbox" name = "<%= trainee.days[i] %>" id="day" value="Front Plank">Front Plank</label></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3"><label class="checkbox-inline"><input type="checkbox" name = "<%= trainee.days[i] %>" id="day" value="Side Plank with Bent Knee">Side Plank with Bent Knee</label></div>
+        <div class="col-sm-2"><label class="checkbox-inline"><input type="checkbox" name = "<%= trainee.days[i] %>" id="day" value="Reverse Crunches">Reverse Crunches</label></div>
+        <div class="col-sm-3"><label class="checkbox-inline"><input type="checkbox" name = "<%= trainee.days[i] %>" id="day" value="Squat Jumps">Squat Jumps</label></div>
+        <div class="col-sm-2"><label class="checkbox-inline"><input type="checkbox" name = "<%= trainee.days[i] %>" id="day" value="Forward Lunge">Forward Lunge</label></div>
+        <div class="col-sm-2"><label class="checkbox-inline"><input type="checkbox" name = "<%= trainee.days[i] %>" id="day" value="Glute Bridge">Glute Bridge</label></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3"><label class="checkbox-inline"><input type="checkbox" name = "<%= trainee.days[i] %>" id="day" id="day" value="Hip Rotations">Hip Rotations</label></div>
+        <div class="col-sm-2"><label class="checkbox-inline"><input type="checkbox" name = "<%= trainee.days[i] %>" id="day" id="day" value="Side Lunge">Side Lunge</label></div>
+        <div class="col-sm-3"><label class="checkbox-inline"><input type="checkbox" name = "<%= trainee.days[i] %>" id="day" id="day" value="Side Plank with Straight Legs">Side Plank with Straight Leg</label></div>
+        <div class="col-sm-2"><label class="checkbox-inline"><input type="checkbox" name = "<%= trainee.days[i] %>" id="day" id="day" value="Side Leg Stand">Single Leg Stand</label></div>
+        <div class="col-sm-2"><label class="checkbox-inline"><input type="checkbox" name = "<%= trainee.days[i] %>" id="day" id="day" value="Chair Twist">Chair Twist</label></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3"><label class="checkbox-inline"><input type="checkbox" name = "<%= trainee.days[i] %>" id ="day" value="Caterpillar Walk">Caterpillar Walk</label></div>
+        <div class="col-sm-2"><label class="checkbox-inline"><input type="checkbox" name = "<%= trainee.days[i] %>" id ="day" value="Squat Side Kick">Sqaut Side Kick</label></div>
+        <div class="col-sm-3"><label class="checkbox-inline"><input type="checkbox" name = "<%= trainee.days[i] %>" id ="day" value="Skipping">Skipping</label></div>
+        <div class="col-sm-2"><label class="checkbox-inline"><input type="checkbox" name = "<%= trainee.days[i] %>" value="">Pull Ups</label></div>
+     </div>
+</div>
+    <% } %>
+    <div class="row" style="padding:20px;">
+      <div class="col-sm-4"><label><h3 style="display:inline; padding-right:10px;">Progress Strength </h3><input type = "percentage" name = "progressStrength" style="width:70px;"></label></div>
+      <div class="col-sm-4"><label><h3 style="display:inline; padding-right:10px;">Progress Flexibility</h3> <input type = "percentage" name = "progressFlexibility" style="width:70px;"></label></div>
+      <div class="col-sm-4"><label><h3 style="display:inline; padding-right:10px;">Progress Fitness</h3> <input type = "percentage" name = "progressFitness" style="width:70px;"></label></div>
+    </div>
+
+    <div class = "row">
+        <div class="form-check col-md-12 mb-3">
+           <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+    </div>
+
+
+  </form>
+
+
+</div>
+
+
+<% include partials/footer.ejs %>
